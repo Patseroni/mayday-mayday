@@ -3,19 +3,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; /* Tungläst typsnitt */
+  font-family: Verdana, "Arial Narrow Bold", sans-serif;
+  /* Tungläst typsnitt */
 }
 
 /* Ställer in bakgrundsfärg, textfärg och textstil för hela sidan */
 body {
   background: #6c6c6c;
   color: #f5f5dc;
-  font-size: 30px;
-  text-align: left;
-  letter-spacing: 5px;
-  word-spacing: 15px;
-  line-height: 1.2em;
-  text-shadow: 5px 5px 10px black;
+  max-width: 1200px;
+  min-width: 420px;
+  margin: 0 auto;
 }
 
 /* Tar bort understrykning på länkar och ändrar färg */
@@ -24,50 +22,48 @@ a {
   text-decoration: none;
 }
 
-/* Stilar för en knapp-liknande div, men "not-allowed" cursor gör att den ser inaktiv ut */
-.button {
-  background-color: magenta;
-  color: cyan;
-  font-size: 50px;
-  padding: 20px;
-  border: 5px dashed black;
-  cursor: not-allowed;
-  text-transform: uppercase;
+.heading {
+  text-align: center;
+  margin: 30px 10px;
+  font-size: 4rem;
 }
 
-/* Nästan osynlig text, spegelvänd */
-.hidden-text {
-  display: block;
-  opacity: 0.1;
-  font-size: 50px;
-  transform: rotate(180deg);
+/* Stilar för en knapp-liknande div, men "not-allowed" cursor gör att den ser inaktiv ut */
+.button {
+  background-color: rgb(211, 211, 211);
+  color: cyan;
+  font-size: 30px;
+  padding: 20px;
+  border: 3px solid black;
 }
 
 /* En behållare med mittjusterad text och en blå transparent bakgrund */
 .container {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   border: 10px solid pink;
   background-color: rgba(0, 0, 255, 0.2);
-  text-align: center;
 }
 
 /* Artikel med prickad orange linje och en radial gradient som bakgrund */
-.article {
-  border-bottom: 10px dotted orange;
-  margin-bottom: 50px;
-  padding-bottom: 50px;
-  background: radial-gradient(circle, black, transparent);
+.article,
+.article-lower {
+  border-bottom: 5px solid #000;
+  padding: 50px;
+  width: 100%;
+  /*background: radial-gradient(circle, black, transparent);*/
 }
 
 /* Rubrik med stor text och mörkröd färg, justerad till höger */
 .headline {
-  font-size: 80px;
-  font-weight: lighter;
-  color: #8d0801;
-  text-align: right;
-  margin: 50px;
+  font-size: 2.5rem;
+  font-weight: Bold;
+  color: #a11;
+  text-align: center;
+  margin: 0px 60px;
+  font-style: italic;
   padding: 20px;
+  max-width: 100%;
 }
 
 /* Navigeringsmeny med mörk bakgrund och jämnt fördelade element */
@@ -75,8 +71,8 @@ a {
   background-color: #3b3b3b;
   padding: 30px;
   display: flex;
-  justify-content: space-between;
-  font-size: 40px;
+  justify-content: space-around;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -92,53 +88,61 @@ a {
   background-color: #acacac40;
 }
 
-/* Bilderna placeras i en rad, centrerar dem horisontellt och vertikalt och lägger till ett mellanrum mellan bilderna */
 .image-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 /* Definierar storleken på bilderna och gör att de täcker det angivna utrymmet utan att bli förvrängda  */
 .image-container img {
   width: 150px;
   height: 150px;
-  object-fit: cover;
+  margin: 10px;
 }
 
 /* Input-fält i en container med kolumnlayout och flytande positionering */
 .input-container {
   display: flex;
-  flex-direction: column;
-  float: right;
-  width: 50%;
-  background: #ffffff00; /* Genomskinlig bakgrund */
+  flex-direction: row;
+  justify-content: end;
+  background-color: #3b3b3b;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-top: 10px;
+  /* Genomskinlig bakgrund */
 }
 
 /* Inputfält med röd text och svart ram */
 .input-container input {
-  font-size: 30px;
-  padding: 20px;
-  text-align: right;
-  border: 5px solid black;
+  font-size: 1rem;
+  width: 300px;
+  padding: 10px;
   background-color: rgb(255, 255, 255);
   color: red;
+
 }
 
 /* Knapp med rosa kant, mörkröd bakgrund och roterad */
 .input-container button {
-  border: 10px ridge pink;
-  background-color: darkred;
+  background-color: rgb(139, 0, 0);
   color: white;
-  font-size: 40px;
-  padding: 30px;
-  cursor: crosshair;
-  transform: rotate(-10deg);
+  margin-left: 2px;
+  font-size: 20px;
+  padding: 10px;
+  /* transform: rotate(-10deg); */
+}
+
+.input-container button:hover {
+  background-color: rgb(90, 0, 0);
+}
+
+.input-container input,
+.input-container button {
+  border-radius: 5px;
 }
 
 /* En knapp med blå bakgrund och vit text */
-.button {
+.click-here-button {
   display: inline-block;
   padding: 10px;
   background-color: blue;
@@ -146,12 +150,12 @@ a {
   cursor: pointer;
 }
 
-/* En "fake ad" med blinkande bakgrund och fast position längst ner */
+/* En "fake ad" med blinkande bakgrund och fast position längst ner
 #fake-ad {
   position: fixed;
   bottom: 0;
   width: 40%;
-  background: repeating-radial-gradient(circle, cyan, magenta 10%, yellow 20%);
+  background: #666;
   text-align: center;
   padding: 20px;
   font-size: 24px;
@@ -161,7 +165,7 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-}
+} */
 
 /* Sektion med centrerad layout */
 .top-section {
@@ -176,31 +180,75 @@ a {
   padding: 10px 15px;
   margin-top: 10px;
   font-weight: bold;
-  transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out,
-    padding 0.5s ease-in-out;
+  /* transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out, */
+  /* padding 0.5s ease-in-out; */
+}
+
+.video-and-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.video-and-img img {
+  width: 30%;
+  margin: 5px 20px;
+  box-shadow: 5px 0px 7px 0px #333;
 }
 
 /* På hover minskas texten kraftigt, nästan osynlig */
+/*
 .btext:hover {
   transform: scale(0.1);
   font-size: 1px;
   padding: 1px;
 }
-
+*/
 /* Bild som roterar mellan -45 och 45 grader */
 .rotating-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: rotateLeftRight 2s infinite alternate ease-in-out;
+  /*animation: rotateLeftRight 2s infinite alternate ease-in-out;*/
 }
 
 /* Nyckelbildning för att rotera bilden åt vänster och höger */
+/*
 @keyframes rotateLeftRight {
   0% {
     transform: rotate(-45deg);
   }
+
   100% {
     transform: rotate(45deg);
+  }
+}
+  */
+
+@media(max-width: 800px) {
+  .navigation {
+    font-size: 1.2rem;
+  }
+
+  .input-container {
+    justify-content: center;
+  }
+
+
+}
+
+@media(max-width: 640px) {
+  .navigation {
+    flex-wrap: wrap;
+  }
+
+  .navigation a {
+    margin: 30px 30px;
+  }
+}
+
+@media(max-width: 500px) {
+  .image-container {
+    display: none;
   }
 }
