@@ -41,8 +41,8 @@ a {
 .container {
   width: 100%;
   margin: 0 auto;
-  border: 10px solid pink;
-  background-color: rgba(0, 0, 255, 0.2);
+  border: 10px solid rgb(138, 138, 165);
+  background-color: rgb(62, 62, 77);
 }
 
 /* Artikel med prickad orange linje och en radial gradient som bakgrund */
@@ -58,7 +58,7 @@ a {
 .headline {
   font-size: 2.5rem;
   font-weight: Bold;
-  color: #a11;
+  color: rgb(224, 89, 89);
   text-align: center;
   margin: 0px 60px;
   font-style: italic;
@@ -192,6 +192,7 @@ a {
 
 .video-and-img img {
   width: 30%;
+  max-width: 354px;
   margin: 5px 20px;
   box-shadow: 5px 0px 7px 0px #333;
 }
@@ -233,8 +234,6 @@ a {
   .input-container {
     justify-content: center;
   }
-
-
 }
 
 @media(max-width: 640px) {
@@ -242,13 +241,22 @@ a {
     flex-wrap: wrap;
   }
 
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .navigation a {
     margin: 30px 30px;
   }
-}
 
-@media(max-width: 500px) {
-  .image-container {
-    display: none;
+  .video-and-img {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .video-and-img img {
+    width: 70%;
+  }
+
 }
