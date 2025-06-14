@@ -41,63 +41,66 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 <body>
     <!-- Navigeringsmeny med dubblett-ID:n, inkonsekvent tabindex, och brutna länkar till en 404-sida. -->
     <nav class="navigation">
-        <a href="404.html" target="_blank">Home</a></span>
-        <a href="404.html">World</a></span>
-        <a href="404.html">Sports</a></span>
-        <a href="404.html" target="_blank">Entertainment</a></span>
+        <a href="#">Home</a>
+        <a href="#">World</a>
+        <a href="#">Sports</a>
+        <a href="#">Entertainment</a>
     </nav>
-
-    <!-- Svåråtkomligt inputfällt -->
-    <div class="input-container">
-        <input type="text" placeholder="Enter text">
-        <button>Search</button>
-    </div>
-
-    <!-- Dold text och klickbar div. 
-     .hidden-text är nästan osynlig p.g.a. låg opacity och roterad tex -->
-    <!-- <p class="hidden-text">This text is invisible.</p> -->
-    <!-- <button class="click-here-button">Click here!</button> -->
-    <div class="container">
-
-        <!-- Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
-        <h1 class="heading">A11y News</h1>
-
-        <div class="article">
-            <!-- <marquee>(rullande text) kan vara en intressant effekt på en hemsida, men det kan också vara distraherande för besökarna. -->
-            <h2 class="headline">Breaking News!</h2>
-            <p>Scientists have discovered a new deep-sea fish with bioluminescent fins off the coast of Australia. The
-                unnamed species is believed to have unique traits that could contribute to future medical research and
-                biotechnology.</p>
+    <main>
+        <!-- Svåråtkomligt inputfällt -->
+        <div class="input-container">
+            <label class="search-label" for="search-input">What are you looking for: </label>
+            <input type="text" placeholder="Enter text" id="search-input">
+            <button>Search</button>
         </div>
 
-        <!-- Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
-        <div class="article-lower">
-            <h3>Lunar New Year: Celebrate with us!</h3>
-            <p>Access the news by pressing the images</p>
-            <!-- Bilder visas inte, varför? -->
-            <div class="image-container">
-                <img src="/images/placeholder.png" alt="Image of an ocean">
-                <img src="/images/placeholder.png" alt="Image of a city">
-                <img src="/images/placeholder.png" alt="Image of a family">
+        <!-- Dold text och klickbar div. 
+     .hidden-text är nästan osynlig p.g.a. låg opacity och roterad tex -->
+        <!-- <p class="hidden-text">This text is invisible.</p> -->
+        <!-- <button class="click-here-button">Click here!</button> -->
+        <div class="container">
+
+            <!-- Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
+            <h1 class="heading">A11y News</h1>
+
+            <div class="article">
+                <!-- <marquee>(rullande text) kan vara en intressant effekt på en hemsida, men det kan också vara distraherande för besökarna. -->
+                <h2 class="headline">Breaking News!</h2>
+                <p>Scientists have discovered a new deep-sea fish with bioluminescent fins off the coast of Australia.
+                    The
+                    unnamed species is believed to have unique traits that could contribute to future medical research
+                    and
+                    biotechnology.</p>
             </div>
 
-        </div>
+            <!-- Klicka på artikeln för att visa ett meddelande, men den utför egentligen inget. -->
+            <div class="article-lower">
+                <h3>Lunar New Year: Celebrate with us!</h3>
+                <p>Access the news by pressing the images</p>
+                <!-- Bilder visas inte, varför? -->
+                <div class="image-container">
+                    <a href="#"><img src="/images/placeholder.png" alt="Image of an ocean"></a>
+                    <a href="#"><img src="/images/placeholder.png" alt="Image of a city"></a>
+                    <a href="#"><img src="/images/placeholder.png" alt="Image of a family"></a>
+                </div>
 
-        <!-- Allt för stor bild. För att motverka prestanda problem, ha koll på storleken på bilden -->
-        <!-- <div class="article" style="display: none;">
+            </div>
+
+            <!-- Allt för stor bild. För att motverka prestanda problem, ha koll på storleken på bilden -->
+            <!-- <div class="article" style="display: none;">
             <p class="headline">Se en 50MB bild ladda långsamt!</p>
             <img src="http://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg" alt="Red flower">
         </div> -->
 
 
-        <!-- Videor kräver mycket prestanda, kan vi ändra eller ta bort för att åstakomma bättre resultat -->
-        <div class="video-and-img">
-            <img src="images/19883.webp" alt="Two people fishing">
-            <img src="images/12.webp" alt="Man fishing at night">
+            <!-- Videor kräver mycket prestanda, kan vi ändra eller ta bort för att åstakomma bättre resultat -->
+            <div class="video-and-img">
+                <img src="images/19883.webp" alt="Two people fishing">
+                <img src="images/12.webp" alt="Man fishing at night">
 
+            </div>
         </div>
-    </div>
-
+    </main>
     <!-- En irriterande annons som alltid syns och innehåller en snurrande bild samt en vilseledande text -->
     <!-- <div id="fake-ad">
         <div class="top-section">
